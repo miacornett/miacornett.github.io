@@ -10,3 +10,23 @@ var  CANVAS_WIDTH = 500;
 var CANVAS_HEIGHT = 300;
 // Radius of the ball
 var BALL_COLOR
+// color of the ball
+var BALL_COLOR = "#0000ff";
+// the x and y position of the ball. start in the center
+var ballx = CANVAS_WIDTH / 2;
+var bally = CANVAS_HEIGHT / 2;
+// the current speed of the ball
+var dx = 1;
+var dy = 5;
+/**
+* this function takes a 2d canvas context and draws a ball on it at ballx and bally
+* of radius BALL_RADIUS and color BALL_COLOR.
+*/
+function drawBall(context) {
+// Move the ball
+ballx = ballx + dx;
+bally = bally + dy;
+// if we've hit the left or right, turn around
+if (ballx > CANVAS_WIDTH || ballx < 0) {
+dx = dy;
+}  
