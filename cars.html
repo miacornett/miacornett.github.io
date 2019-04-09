@@ -21,7 +21,7 @@
       // Let's create a method to draw a car
       var drawCar = function(car)
       {
-        var carHtml = '<img src="https://www.google.com/search?q=car&safe=strict&rlz=1C5CHFA_enUS821US821&source=lnms&tbm=isch&sa=X&ved=0ahUKEwihhoWfy8PhAhWSmuAKHe2QDAUQ_AUIDigB&biw=1200&bih=591#imgrc=slz_TSe4dSsegM:">';
+        var carHtml = '<img src="https://nostarch.com/images/car.png">';
         
         var carElement = $(carHtml);
         
@@ -37,6 +37,12 @@
       drawCar(tesla);
       var nissan = new Car(100, 200);
       drawCar(nissan);
+      var ram = new Car(200,100);
+      drawCar(ram);
+      var chevy = new Car(300, 400);
+      drawCar(chevy);
+      var charger = new Car(300, 300);
+      drawCar(charger);
     </script>
   </body>
 </html>
