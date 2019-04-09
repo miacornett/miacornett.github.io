@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>cars</title>
-</head>
-<body>
-<script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
-
-<script>
-//all of your code for javascript goes here
-//we are going to create an object car 
-var Car = function(x,y)
-{
-this.x= x; //set the object's x and y values
-this.y= y;
-};
-
-//lets create an instance of this object called tesla
-var tesla = new Car (10,20); // x=10, y=20
-
-//lets create a method to draw a car
-var drawcar = function(car)
-{
-var carhtml = '<img src="https://www.google.com/search?q=car&safe=strict&rlz=1C5CHFA_enUS821US821&tbm=isch&source=lnt&tbs=sur:fm&sa=X&ved=0ahUKEwjx3dCdysPhAhXDTd8KHfTxDQgQpwUIHw&biw=1200&bih=591&dpr=1#imgrc=91aQjgCztwTRbM:">';
-
-var carelement = $(carhtml);
-
-carelement.css({
-position: "absolute",
-left: car.x,
-top: car.y
-});
-
-$("body").append(carelement);
-};
-
-drawcar(tesla);
-var nissan = new Car (100,200);
-drawcar(nissan);
-</script>
-</body>
+  <head>
+    <title>Cars</title>
+  </head>
+  <body>
+    <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    <script>
+      // All of your code for javascript goes here
+      // We are going to create an object called Car
+      var Car = function(x,y)
+      {
+        this.x = x; // set the object's x and y values
+        this.y = y;
+      };
+      
+      // Let's create an instance of this object called tesla
+      var tesla = new Car(10,20); // x=10, y=20
+      
+      // Let's create a method to draw a car
+      var drawCar = function(car)
+      {
+        var carHtml = '<img src="https://www.google.com/search?q=car&safe=strict&rlz=1C5CHFA_enUS821US821&source=lnms&tbm=isch&sa=X&ved=0ahUKEwihhoWfy8PhAhWSmuAKHe2QDAUQ_AUIDigB&biw=1200&bih=591#imgrc=slz_TSe4dSsegM:">';
+        
+        var carElement = $(carHtml);
+        
+        carElement.css({
+          position: "absolute",
+          left: car.x,
+          top: car.y
+        });
+        
+        $("body").append(carElement);
+      };
+      
+      drawCar(tesla);
+      var nissan = new Car(100, 200);
+      drawCar(nissan);
+    </script>
+  </body>
 </html>
-
