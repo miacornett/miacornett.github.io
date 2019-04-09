@@ -8,14 +8,15 @@
 
 <script>
 //all of your code for javascript goes here
-//we are going to create an object car var car= function(x,y)
+//we are going to create an object car 
+var Car = function(x,y)
 {
 this.x= x; //set the object's x and y values
 this.y= y;
 };
 
 //lets create an instance of this object called tesla
-var tesla = new car (10,20); // x=10, y=20
+var tesla = new Car (10,20); // x=10, y=20
 
 //lets create a method to draw a car
 var drawcar = function(car)
@@ -34,7 +35,7 @@ $("body").append(carelement);
 };
 
 drawcar(tesla);
-var nissan = new car (100,200);
+var nissan = new Car (100,200);
 drawcar(nissan);
 </script>
 </body>
