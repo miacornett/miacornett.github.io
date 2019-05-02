@@ -1,46 +1,51 @@
-something
+<!doctype html>
 <html>
 <head>
 <title>hangman!</title>
 </head>
 <body>
-<h1>hangman!<h1>
+<h1> hangman! </h1>
+  <a href="index.html"">home</a>
 <script>
-//create a list of words to choose from 
-var words= ["javascript', "monkey", "amazing", "pancake"];
-
+//create a list of words to choose from
+var words = ["hilarious", "reading", "geometry", "pancake", "waffle", "spaghetti", "purple", "candy", "pony"];
 //pick a random word
-var word = words[math.floor(math.random() * words.length)];
-
-//set up an array for the answer (will hold blanks)
-var answerarray = [];
-for(var i = 0; i++)
+var word = words[Math.floor(Math.random() *words.length)];
+//set up an array of the answer (will hold blanks)
+var answerArray = [];
+for(var i = 0; i < word.length; i++)
 {
-answerarray [i] = "_";
+answerArray[i] = "_";
 }
-var remainingletters = word.length;
+var remainingLetters = word.length;
 //the game loop
-while (remainingletterds > 0)
+while (remainingLetters > 0)
 {
-//show player their progress
+//show palyers their progress
 alert(answerArray.join(" "));
-// get guess from the player
-  var guess = prompt("please guess a single letter");
-  if (guess === null)
-  {
-    //quit
-    break;
-  }else if (guess.length !==1)
-  {
-    alert("you must enter only a SINGLE letter");
-  }else{
-    //they have guessed a letter
-    for(word[j] = guess;
-        remainingletters--;
-  
-      
+//get a guess from the player
+var guess = prompt("please guess a single letter");
+if (guess === null)
+{
+//quit
+break;
+}else if(guess.length !== 1)
+{
+alert("you must enter only a SINGLE letter!");
+}else{
+//they have guessed a letter, is it in the word?
+for(var j = 0; j < word.length; j++)
+{
+if(word[j] === guess && answerArray[j] === "_")
+{
+answerArray[j] = guess;
+remainingLetters--;
+}
+}
+}
+}
+alert("good job! the answer was " + word);
 </script>
 </body>
 </html>
 
-  
