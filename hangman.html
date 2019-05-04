@@ -6,9 +6,47 @@
 <body>
 <h1> hangman! </h1>
   <a href="index.html"">home</a>
+  <canvas id="canvas" width="400" height="400"></canvas>                     
 <script>
 //create a list of words to choose from
 var words = ["hilarious", "reading", "geometry", "pancake", "waffle", "spaghetti", "purple", "candy", "pony"];
+      var canvas = document.getElementById("canvas"); // look for canvas
+      var ctx = canvas.getContext("2d"); // tells javascript that the drawing will be 2 dimensional
+      var lives = 6;
+var head = function(){
+     ctx.strokeRect(65 , 55, 40, 40);// head
+   }
+      
+   var body = function(){
+    ctx.beginPath();
+      ctx.moveTo(85,95);
+      ctx.lineTo( 85, 181);
+    ctx.stroke();
+   }
+   var leftArm = function(){
+     ctx.beginPath();
+      ctx.moveTo( 85, 131);// left arm
+      ctx.lineTo( 53, 35);
+     ctx.stroke();
+   }
+      var rightArm = function(){
+        ctx.beginPath();
+        ctx.moveTo( 85, 131);// right arm
+      ctx.lineTo( 73, 35);
+        ctx.stroke();
+      }
+      var rightLeg = function(){
+        ctx.beginPath();
+        ctx.moveTo( 85, 181);// right leg
+      ctx.lineTo( 55, 206);
+        ctx.stroke
+      }
+      var leftLeg = function(){
+        ctx.beginPath();
+        ctx.moveTo( 85, 181);// left arm
+      ctx.lineTo( 115, 206);
+       ctx.stroke();
+      }                                                                                                            
 //pick a random word
 var word = words[Math.floor(Math.random() *words.length)];
 //set up an array of the answer (will hold blanks)
@@ -34,13 +72,43 @@ break;
 alert("you must enter only a SINGLE letter!");
 }else{
 //they have guessed a letter, is it in the word?
+var gotIt = false;
 for(var j = 0; j < word.length; j++)
 {
-if(word[j] === guess && answerArray[j] === "_")
-{
-answerArray[j] = guess;
-remainingLetters--;
+  if(word[j] === guess && answerArray[j] === "_")
+  {
+    answerArray[j] = guess;
+    remainingLetters--;
+    gotIt = true;                                            
+  }
 }
+if(!gotIt)
+{
+  lives--;
+  if(lives === 5)
+  {
+       head();
+  }
+  if(lives === 4)
+  {
+      body();
+  }
+  if(lives === 3)
+  {
+       leftArm();
+  }
+  if(lives === 2)
+  {
+       rightArm();
+  }
+  if(lives === 1)
+  {
+       leftLeg();
+  } 
+  if(lives === 0)
+  {
+       rightLeg();
+  }
 }
 }
 }
@@ -48,4 +116,3 @@ alert("good job! the answer was " + word);
 </script>
 </body>
 </html>
-
